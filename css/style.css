@@ -1,0 +1,388 @@
+/* Genel Stiller */
+body {
+    font-family: 'serif';
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Stili */
+header {
+    background: #fdfdfd;
+    color: #000;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: fixed; /* Header her zaman üstte kalacak */
+    top: 0; /* Üstten hizalama */
+    width: 100%; /* Genişlik ayarı */
+    z-index: 1000; /* Diğer içeriklerin üstünde kalmasını sağlar */
+}
+
+/* Logo Stili */
+.logo img {
+    max-height: 50px;
+}
+
+/* Navigasyon Stili */
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: small;
+}
+
+nav ul li a:hover {
+    color: #575757; /* Sadece metnin rengini değiştirir */
+}
+
+/* Dropdown Menü Stili */
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%; /* Dropdown menünün üst menü altına yerleşmesini sağlar */
+}
+
+nav ul li .dropdown-content li {
+    display: block;
+    margin: 0;
+}
+
+nav ul li .dropdown-content li a {
+    color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+nav ul li .dropdown-content li a:hover {
+    background-color: #ddd;
+}
+
+/* Hover ile Dropdown Menü Gösterme */
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Ana İçerik Stili */
+.main-container {
+    padding: 20px;
+    padding-top: 80px; /* Header'ın kapladığı alan için ekstra boşluk */
+    text-align: center; /* İçerik merkezi hizalar */
+}
+
+/* Duyurular Bölümü */
+.announcements-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Duyurular bağlantısı ve megafon simgesi stili */
+.all-announcements-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.all-announcements-link:hover {
+    text-decoration: underline;
+}
+
+.megaphone-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Duyurular başlığı ve ikon stili */
+.announcements-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.announcements-header h1 {
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.announcements-header h1 a {
+    text-decoration: none;
+    color: #000;
+}
+
+.announcements-header h1 a:hover {
+    color: #007bff;
+}
+
+.announcements-header .announcement-icon {
+    width: 40px;
+    height: 40px;
+}
+/* Duyuru Kutu Stili */
+.announcements-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    background-color: #f4f4f4; /* Arka plan rengi */
+    padding: 10px 0; /* Yukarı ve aşağı boşluk */
+}
+
+.announcement-box {
+    width: 400px; /* Kutu genişliği */
+    height: 250px; /* Kutu yüksekliği */
+    background-color: #fff;
+    margin-right: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Duyuruların sürekli kaydırılmasını sağlayacak */
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.announcements-container {
+    animation: scroll 30s linear infinite; /* Süreyi 30 saniye olarak ayarladık */
+}
+
+/* Footer Stili */
+footer {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Üst ve alt padding */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Logonun altında telefon numarası ve e-posta adresi */
+.footer-column .contact-info {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Chatbox Stili */
+.chatbox-container {
+    position: fixed;
+    bottom: 0;
+    right: 1000px;
+    width: 800px;
+    max-height: 500px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.chatbox-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.chatbox-content {
+    padding: 10px;
+    display: block;
+}
+
+.chatbox-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbox-content input, .chatbox-content textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chatbox-content button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chatbox-content button:hover {
+    background-color: #0056b3;
+}
+
+/* Yeni Buton Stili */
+.question-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background-color: #f39c12;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px; /* Daha küçük bir satır yüksekliği */
+    font-size: 14px; /* Daha küçük bir yazı tipi boyutu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px; /* İçerideki yazıya daha fazla alan sağlar */
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.question-button:hover {
+    background-color: #0056b3;
+}
+/* Genel Stiller */
+body {
+    font-family: 'serif';
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Arka plan rengini açık gri yapalım */
+}
+
+/* Form Stili */
+form {
+    max-width: 400px;
+    margin: 50px auto; /* Üst ve alt boşluk ekleyerek ortalanmasını sağlar */
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff; /* Arka plan rengini beyaz yapalım */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Hafif bir gölge ekleyelim */
+}
+
+/* Form Başlığı */
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Alanları */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Alanlar arasına biraz boşluk ekleyelim */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Buton Stili */
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Buton metin boyutunu artırarak daha okunabilir yapalım */
+}
+
+form button:hover {
+    background-color: #45a049; /* Hover efekti */
+}
+
+/* Mobil Görünüm İçin Ayarlar */
+@media (max-width: 600px) {
+    form {
+        margin: 20px; /* Küçük ekranlarda form kenar boşluklarını azaltalım */
+    }
+
+    form button {
+        font-size: 14px; /* Buton metin boyutunu mobil için küçültelim */
+    }
+}
+
+
