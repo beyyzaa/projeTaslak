@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: #f4f4f4; /* Arka plan rengini açık gri */
 }
 
 /* Header Stili */
@@ -14,10 +15,10 @@ header {
     display: flex;
     justify-content: left;
     align-items: center;
-    position: fixed; /* Header her zaman üstte kalacak */
-    top: 0; /* Üstten hizalama */
-    width: 100%; /* Genişlik ayarı */
-    z-index: 1000; /* Diğer içeriklerin üstünde kalmasını sağlar */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* Logo Stili */
@@ -28,6 +29,14 @@ header {
 /* Navigasyon Stili */
 nav {
     display: flex;
+    justify-content: flex-start; /* Menü öğelerini sola hizalar */
+    align-items: center;
+    padding: 0 50px;
+}
+
+/* Logo ve Menü Stili */
+.logo {
+    margin-right: 30px; /* Logonun menü öğelerinden ayrılmasını sağlar */
 }
 
 nav ul {
@@ -35,12 +44,12 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    gap: 30px; /* Menü öğeleri arasındaki boşluğu ayarlar */
 }
 
 nav ul li {
-    margin: 0 15px;
-    display: inline-block;
-    position: relative;
+    margin: 0;
+    text-align: center;
 }
 
 nav ul li a {
@@ -52,8 +61,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #575757; /* Sadece metnin rengini değiştirir */
+    color: #575757;
 }
+
+
 
 /* Dropdown Menü Stili */
 nav ul li .dropdown-content {
@@ -63,7 +74,7 @@ nav ul li .dropdown-content {
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    top: 100%; /* Dropdown menünün üst menü altına yerleşmesini sağlar */
+    top: 100%;
 }
 
 nav ul li .dropdown-content li {
@@ -92,7 +103,7 @@ nav ul li:hover .dropdown-content {
 .main-container {
     padding: 20px;
     padding-top: 80px; /* Header'ın kapladığı alan için ekstra boşluk */
-    text-align: center; /* İçerik merkezi hizalar */
+    text-align: center;
 }
 
 /* Duyurular Bölümü */
@@ -101,7 +112,7 @@ nav ul li:hover .dropdown-content {
     margin-bottom: 20px;
 }
 
-/* Duyurular bağlantısı ve megafon simgesi stili */
+/* Duyurular Bağlantısı ve Megafon Simgesi */
 .all-announcements-link {
     display: flex;
     align-items: center;
@@ -121,7 +132,7 @@ nav ul li:hover .dropdown-content {
     margin-right: 10px;
 }
 
-/* Duyurular başlığı ve ikon stili */
+/* Duyurular Başlığı ve İkon Stili */
 .announcements-header {
     display: flex;
     align-items: center;
@@ -147,31 +158,32 @@ nav ul li:hover .dropdown-content {
     width: 40px;
     height: 40px;
 }
+
 /* Duyuru Kutu Stili */
 .announcements-container {
     display: flex;
-    overflow: hidden;
+    overflow-x: auto;
     white-space: nowrap;
     width: 100%;
-    background-color: #f4f4f4; /* Arka plan rengi */
-    padding: 10px 0; /* Yukarı ve aşağı boşluk */
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    scroll-behavior: smooth;
 }
 
 .announcement-box {
-    width: 400px; /* Kutu genişliği */
-    height: 250px; /* Kutu yüksekliği */
+    width: 400px;
+    height: 250px;
     background-color: #fff;
     margin-right: 10px;
     padding: 20px;
     box-sizing: border-box;
     border: 1px solid #ddd;
-    display: inline-block;
     text-align: center;
     font-size: 14px;
     line-height: 1.4;
 }
 
-/* Duyuruların sürekli kaydırılmasını sağlayacak */
+/* Duyuruların Sürekli Kaydırılmasını Sağlayacak */
 @keyframes scroll {
     from {
         transform: translateX(100%);
@@ -182,15 +194,15 @@ nav ul li:hover .dropdown-content {
 }
 
 .announcements-container {
-    animation: scroll 30s linear infinite; /* Süreyi 30 saniye olarak ayarladık */
+    animation: scroll 30s linear infinite;
 }
 
 /* Footer Stili */
 footer {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
-    padding: 20px 0; /* Üst ve alt padding */
+    padding: 20px 0;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -231,7 +243,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Logonun altında telefon numarası ve e-posta adresi */
+/* Logonun Altında Telefon Numarası ve E-posta Adresi */
 .footer-column .contact-info {
     margin-top: 10px;
     font-size: 14px;
@@ -261,7 +273,6 @@ footer {
 
 .chatbox-content {
     padding: 10px;
-    display: block;
 }
 
 .chatbox-content form {
@@ -269,7 +280,8 @@ footer {
     flex-direction: column;
 }
 
-.chatbox-content input, .chatbox-content textarea {
+.chatbox-content input,
+.chatbox-content textarea {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -299,48 +311,37 @@ footer {
     background-color: #f39c12;
     color: white;
     border-radius: 50%;
-    text-align: center;
-    line-height: 20px; /* Daha küçük bir satır yüksekliği */
-    font-size: 14px; /* Daha küçük bir yazı tipi boyutu */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 5px; /* İçerideki yazıya daha fazla alan sağlar */
     text-align: center;
     text-decoration: none;
     box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 5px;
 }
 
 .question-button:hover {
     background-color: #0056b3;
 }
-/* Genel Stiller */
-body {
-    font-family: 'serif';
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4; /* Arka plan rengini açık gri yapalım */
-}
 
 /* Form Stili */
 form {
     max-width: 400px;
-    margin: 50px auto; /* Üst ve alt boşluk ekleyerek ortalanmasını sağlar */
+    margin: 50px auto;
     padding: 20px;
     border: 1px solid #ddd;
-    background-color: #fff; /* Arka plan rengini beyaz yapalım */
+    background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Hafif bir gölge ekleyelim */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Başlığı */
 form h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Form Alanları */
 form label {
     display: block;
     margin-bottom: 10px;
@@ -352,13 +353,12 @@ form input[type="email"],
 form input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px; /* Alanlar arasına biraz boşluk ekleyelim */
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-/* Buton Stili */
 form button {
     width: 100%;
     padding: 10px;
@@ -367,22 +367,34 @@ form button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px; /* Buton metin boyutunu artırarak daha okunabilir yapalım */
+    font-size: 16px;
 }
 
 form button:hover {
-    background-color: #45a049; /* Hover efekti */
+    background-color: #45a049;
 }
 
 /* Mobil Görünüm İçin Ayarlar */
 @media (max-width: 600px) {
     form {
-        margin: 20px; /* Küçük ekranlarda form kenar boşluklarını azaltalım */
+        margin: 20px;
     }
 
     form button {
-        font-size: 14px; /* Buton metin boyutunu mobil için küçültelim */
+        font-size: 14px;
+    }
+
+    .announcement-box {
+        width: 300px; /* Küçük ekranlarda duyuru kutularının genişliğini azaltır */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Mobilde kolonları alt alta yerleştirir */
+        align-items: center;
+    }
+
+    .chatbox-container {
+        width: 90%;
+        right: 5%;
     }
 }
-
-
