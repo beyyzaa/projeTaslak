@@ -7,35 +7,50 @@
     <title>Duyurular</title>
 </head>
 <body>
-    <header>
-        <h1>Duyurular</h1>
-    </header>
+    <!-- Navbar'ı Dinamik Olarak Yüklemek için Boş Bir Div -->
+    <div id="navbar-container"></div>
+
     <main>
-        <section id="announcements">
-            <div class="announcements-container">
+        <section id="announcement">
+            <div class="announcement-container">
                 <div class="announcement-box">
                     <a href="announcement1.html">
-                        <img src="images/robot-image1.png" alt="Robot Yarışması" class="announcement-image">
-                        <p>30.07.2024 - Otonom Araç Kategori Kılavuzunda Güncelleme</p>
-                        <p>Otonom Araç kategorisi yarışma kuralları Robot Özellikleri kısmındaki yedinci bend aşağı</p>
+                        <img src="images/announcement1.jpg" alt="Duyuru 1 Resmi" class="announcement-image">
+                        <h3>Otonom Araç Kategori Kılavuzunda Güncelleme</h3>
+                        <p>30.07.2024 - Otonom Araç kategorisi yarışma kuralları Robot Özellikleri kısmındaki yedinci bend aşağı...</p>
                     </a>
                 </div>
                 <div class="announcement-box">
                     <a href="announcement2.html">
-                        <img src="images/robot-image2.png" alt="Robot Yarışması" class="announcement-image">
-                        <p>23.07.2024 - Labirent Ustası Kategori Kılavuzunda Güncelleme</p>
-                        <p>Gelen sorular, anlaşılmayan durumlar ve belirtilmesi özellikle istenen şartlar üzerine</p>
+                        <img src="images/announcement2.jpg" alt="Duyuru 2 Resmi" class="announcement-image">
+                        <h3>Labirent Ustası Kategori Kılavuzunda Güncelleme</h3>
+                        <p>23.07.2024 - Gelen sorular, anlaşılmayan durumlar ve belirtilmesi özellikle istenen şartlar üzerine...</p>
                     </a>
                 </div>
                 <div class="announcement-box">
                     <a href="announcement3.html">
-                        <img src="images/robot-image3.png" alt="Robot Yarışması" class="announcement-image">
-                        <p>12.07.2024 - Su Altı Robot (ROV) Kategori Kılavuzunda Güncelleme</p>
-                        <p>Havuz ölçülerinin değişmesinden dolayı SU ALTI ROBOT KATEGORİSİ YARIŞMA KURALLARI k</p>
+                        <img src="images/announcement3.jpg" alt="Duyuru 3 Resmi" class="announcement-image">
+                        <h3>Su Altı Robot (ROV) Kategori Kılavuzunda Güncelleme</h3>
+                        <p>12.07.2024 - Havuz ölçülerinin değişmesinden dolayı Su Altı Robot (ROV) kategorisi kılavuzu...</p>
                     </a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Navbar'ı Dinamik Olarak Yükleyen JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadHTML('navbar-container', 'components/navbar.html');
+        });
+
+        function loadHTML(elementId, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                });
+        }
+    </script>
 </body>
 </html>
